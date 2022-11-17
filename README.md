@@ -13,16 +13,16 @@ contacts for the repository: Elena Papaleo, elpap-at-dtu.dk, elenap-at-cancer.dk
 
 PLEASE, CITE THE PUBLICATION ABOVE IF YOU USE THE SCRIPTS FOR YOUR OWN RESEARCH
 
-## This Project-folder contains the entire Basal-like Breast Cancer study
+### This Project-folder contains the entire Basal-like Breast Cancer study
 
 AIM: To find driver genes for Basal-like patients by running Moonlight on BRCA-Basal specific data from TCGA.
 
-# SET UP -----------------------------
+### SET UP -----------------------------
 
-# CONDA:----
-# install:
+##### CONDA:----
+###### install:
 conda create --prefix ./env_Basal -c conda-forge r-base=4.1.3 r-devtools
-# to activate
+##### to activate
 conda activate ./env_Basal
 
 # Generally -------------------------
