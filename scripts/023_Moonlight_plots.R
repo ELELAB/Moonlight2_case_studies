@@ -2,7 +2,8 @@
 
 # SETUP ---------------------------------------
 # Libaries ---------------
-library(MoonlightR)
+library(Moonlight2R)
+
 # Data -------------------
 load("../data/GRN_Basal.rda")
 load("../data/URA_Basal.rda")

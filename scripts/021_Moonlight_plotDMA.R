@@ -1,8 +1,8 @@
 # This script plots heatmaps of the DMA results 
-getwd()
+
 # SETUP --------------------------------------
 # Libraries --------------
-library(MoonlightR)
+library(Moonlight2R)
 library(purrr)
 
 # Data ------------------

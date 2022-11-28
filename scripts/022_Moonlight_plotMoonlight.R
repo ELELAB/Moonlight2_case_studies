@@ -1,8 +1,8 @@
 #This script will plot two heatmaps of the moonlight scores  
-getwd()
+
 # SETUP ----------------------------------
 # Library ---------------
-library(MoonlightR)
+library(Moonlight2R)
 
 # Data ------------------
 load("../data/URA_Basal.rda")

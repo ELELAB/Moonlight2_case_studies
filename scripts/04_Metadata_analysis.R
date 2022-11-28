@@ -1,5 +1,6 @@
 library(tidyverse)
 library(TCGAbiolinks)
+library(maftools)
 
 # Load Data ---------------------------
 clinical <- GDCquery_clinic(project = "TCGA-BRCA", type = "clinical")
@@ -95,7 +96,7 @@ summary(aov(age_at_index~Stage, data = x ))
 
 
 # Plotting with maftools -----------------
-library(maftools)
+
 mymaf <- read.maf(maf = DEG_Mutations_Annotations)
 
 oncoplot(mymaf, top = 20)

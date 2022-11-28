@@ -1,9 +1,9 @@
 # This script runs the moonlight pipeline
-setwd("/data/user/astrid/BasalCase/scripts")
+
 # SET UP -------------------------------
 # Library ----------------
 library(TCGAbiolinks)
-library(MoonlightR) 
+library(Moonlight2R) 
 
 # Data -------------------
 DEA_Basal <- get(load("../data/rawdata/BRCA_BRCA.Basal_dataDEGs.rda"))
