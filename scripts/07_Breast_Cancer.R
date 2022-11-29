@@ -1,7 +1,5 @@
 # This script compare known breast cancer driver genes with moonlight findings.
 
-setwd("/data/user/astrid/BasalCase/scripts")
-
 # SET UP -------------------------------
 # Library ----------------
 library(tidyverse)

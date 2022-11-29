@@ -10,7 +10,7 @@ library(tidyverse)
 library(UpSetR)
 library(ComplexHeatmap)
 library(viridis)
-library(MoonlightR) #MoonlightR2
+library(Moonlight2R)
 library(enrichR)
 library(gridExtra)
 
@@ -117,7 +117,7 @@ grid.arrange(p1, p2, p3,ncol=3) #, top = textGrob("KEGG Pathways",gp=gpar(fontsi
 
 
 ## Compare Dual drivers with Shen et al. 2018 -----------------
-Shen <- read.delim(file = "/data/user/shared_projects/moonlight_bc_paper/DE_subtype_specific_2021/data/raw_data/Shen_dual_genes.txt",
+Shen <- read.delim(file = "../data/raw_data/Shen_dual_genes.txt",
                    header = FALSE)
 inner_join(as.data.frame(dual), Shen, by = c('dual' = 'V1'))
-inner_join(as.data.frame(Drivers), Shen, by =c('Hugo_Symbol' = 'V1')) %>% View()
+inner_join(as.data.frame(Drivers), Shen, by =c('Hugo_Symbol' = 'V1')) 

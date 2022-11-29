@@ -4,6 +4,7 @@
 
 # Load libraries ------------------------------
 library(tidyverse)
+library(maftools)
 
 # Load data -----------------------------------
 load("../results/Oncogenic_mediators_mutation_summary.rda")
@@ -110,12 +111,12 @@ ggsave(muts_per_patient_bar, filename =  "../results/031_barplot_mutations_per_p
   ggsave(top_drivers, filename = '../results/031_barplot_top_drivers_in_patients.png')
   
   #SYNE1_ 
-  DEG_Mutations_Annotations %>% filter(Hugo_Symbol == 'SYNE1') %>% View()
+  DEG_Mutations_Annotations %>% filter(Hugo_Symbol == 'SYNE1') 
   DEG_Mutations_Annotations %>% filter(Hugo_Symbol == 'SYNE1') %>% 
     select(Start_Position, Reference, Mutant, Variant_Classification, CScape_Mut_Class,
-           CScape_Coding_score, CScape_Noncoding_score) %>%  View() 
+           CScape_Coding_score, CScape_Noncoding_score)
 
-  library(maftools)
+  
   mymaf <- read.maf(maf = DEG_Mutations_Annotations)
   plotProtein(gene ='SYNE1', refSeqID = 'NM_182961')
   lollipopPlot(maf = mymaf, gene = 'SYNE1', AACol = 'HGVSp_Short', showMutationRate = TRUE, refSeqID = "NM_182961")

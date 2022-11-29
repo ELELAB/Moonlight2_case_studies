@@ -2,30 +2,40 @@
 rm(list = ls())
 
 # Set working directory ---------------------------------------------------
-#setwd()
-
-# Load repository 
-devtools::install_github(repo = "ELELAB/MoonlightR2@feature_docs_update", 
-                         auth_token = "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")
+setwd("./scripts")
 
 # Check all req are install 
 # Check packages ----------------------------------------------------------
 # Checking for the required packages download if not present
-install_if_needed(c("MoonlightR",
+install_if_needed(c("Moonlight2R",
                     "devtools",
                     "TCGAbiolinks"))
 
-# Run Scripts
-source("run_FEA.R")
-source("plot_FEA.R")
+#Run scripts
 
-source("run_moonlight.R")
-#source("metadata_analysis.R") 
-#source("minor_calculations.R")
+## Moonlight
+source("01_FEA_analysis.R")
+source("020_Moonlight_analysis.R")
+source("021_Moonlight_plotDMA.R")
+source("022_Moonlight_plotMoonlight.R")
+source("023_Moonlight_plots.R")
 
-source("plot_moonlight.R")
-source("plot_DMA.R")
-#source("plots.R")
-#source("plot_additional.R")
-source("plot_upset.R") 
+## Exploring specific genes and mutations
+source("030_Summarise.R")
+source("031_Summarise_plots.R")
+source("032_Summarise_promoter_muts.R")
+source("033_Summarise_trrust.R")
+
+## Clincal
+source("04_Metadata_analysis.R")
+
+## Similarities and differences between TSG and OCG
+source("05_OCG_vs_TSG.R")
+
+## Comparing driver genes to other findings
+source("06_Upset_and_Dual.R")
+source("07_Breast_Cancer.R")
+
+## Supplementary text 2:
+source("98_MAF_quality_analysis.R")
 

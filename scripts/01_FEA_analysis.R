@@ -3,7 +3,7 @@
 
 # SETUP ---------------------------------
 # Library ---------------
-library(MoonlightR)
+library(Moonlight2R)
 # Data -----------------
 DEA_Basal <- get(load("../data/rawdata/BRCA_BRCA.Basal_dataDEGs.rda"))
 
