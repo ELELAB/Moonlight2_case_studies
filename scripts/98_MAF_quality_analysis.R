@@ -1,4 +1,4 @@
-# This scriptcontisns the investigation of MAF quality
+# This script contains the investigation of MAF quality
 # the purpose were to determine thresholds of VAF, tumor and normal depth, and 
 # variant alle count. 
 
