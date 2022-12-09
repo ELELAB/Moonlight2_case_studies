@@ -37,12 +37,6 @@ upset_plot(file_name = "06_upsetplot_oncogenic_mediators.pdf", dir_output = "../
            sets_list = myset1, names_sets = names_sets, title_plot = "Oncogenic mediators",
            viridis_color = "viridis")
 
-## Enrichment analysis---------------------------
-#dual <- append(Moonlight_TSG[Moonlight_TSG %in% NCG_OCG], 
-#               Moonlight_OCG[Moonlight_OCG %in% NCG_TSG] )
-
-
-
 
 # Driver PLOT -----------------------------------------------------------------------------
 ## Wrangle data ----------------------------
@@ -119,5 +113,5 @@ grid.arrange(p1, p2, p3,ncol=3) #, top = textGrob("KEGG Pathways",gp=gpar(fontsi
 ## Compare Dual drivers with Shen et al. 2018 -----------------
 Shen <- read.delim(file = "../data/raw_data/Shen_dual_genes.txt",
                    header = FALSE)
-inner_join(as.data.frame(dual), Shen, by = c('dual' = 'V1'))
+inner_join(as.data.frame(dual_drivers), Shen, by = c('dual_drivers' = 'V1'))
 inner_join(as.data.frame(Drivers), Shen, by =c('Hugo_Symbol' = 'V1')) 
