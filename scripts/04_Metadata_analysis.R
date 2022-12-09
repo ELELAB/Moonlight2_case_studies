@@ -1,11 +1,13 @@
 library(tidyverse)
 library(TCGAbiolinks)
 library(maftools)
+library(ggplot2)
 
 # Load Data ---------------------------
 clinical <- GDCquery_clinic(project = "TCGA-BRCA", type = "clinical")
 load("../results/DEG_Mutations_Annotations.rda")
 load("../data/rawdata/BRCA_BRCA.Basal_dataFilt_HUGO.rda")
+
 
 # Extract patient IDs ---------------
 IDs_mut <- DEG_Mutations_Annotations %>% separate(col = Tumor_Sample_Barcode, 
@@ -36,7 +38,7 @@ clinical_basal %>%
 clinical_basal %>% 
   ggplot(aes(y = primary_diagnosis, fill = race), alpha = 0.8) +
   geom_bar(position = "dodge") +
-  them_bw()
+  theme_bw()
 
 clinical_basal %>% 
   ggplot(aes(x = age_at_index, fill = race), alpha = 0.8) +
