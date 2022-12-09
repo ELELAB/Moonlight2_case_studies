@@ -42,7 +42,7 @@ conda activate ./env_Basal
 3. run the analyis:
 
 ```
-$ bash ./Run_basal.sh
+$ bash ./Run_Basal.sh
 ```
 
 This script will:
