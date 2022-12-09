@@ -1,4 +1,4 @@
-# This scriptcontisns the investigation of MAF quality 
+# This scriptcontisns the investigation of MAF quality
 # the purpose were to determine thresholds of VAF, tumor and normal depth, and 
 # variant alle count. 
 
@@ -9,12 +9,12 @@ library(gridExtra)
 # Load data -----------------------
 maf <- read.csv("../data/rawdata/mutations.csv")  %>% 
   mutate(VAF = t_alt_count/t_depth,
-                Patient_ID = as.factor(X ))
+                Patient_ID = as.factor(X))
 
 
 # Investigation -------------------
 # General density plots of scores ------------------------------
-maf %>% filter(t_depth < 600) %>% 
+maf %>% filter(t_depth < 600) %>%
   ggplot(aes(x = t_depth))+
   geom_density()
 
@@ -49,7 +49,7 @@ maf %>%
 
 #split tree way sorted by VAF -----------------------------------------
 p1 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                     ID = as.factor(...1 )) %>% 
+                     ID = as.factor(X)) %>%
   filter(VAF < 0.25,
          t_alt_count >= 3,
          t_depth >= 10) %>% 
@@ -57,14 +57,14 @@ p1 <- maf %>% mutate(VAF = t_alt_count/t_depth,
   geom_point(aes(y = VAF))
 
 p2 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                     ID = as.factor(...1 )) %>% 
+                     ID = as.factor(X)) %>%
   filter(VAF < 0.25,
          t_alt_count >= 3,
          t_depth >= 10) %>% 
   ggplot(aes(x = fct_reorder(.f =ID, VAF))) +
   geom_point(aes(y=t_depth))
 p3 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                     ID = as.factor(...1 )) %>% 
+                     ID = as.factor(X)) %>%
   filter(VAF < 0.25,
          t_alt_count >= 3,
          t_depth >= 10) %>% 
@@ -74,7 +74,7 @@ gridExtra::grid.arrange(p1,p2,p3, nrow = 3)
 
 #split tree way sorted by t_alt_count -------------------------------------
 pp1 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                      ID = as.factor(...1 )) %>% 
+                      ID = as.factor(X)) %>%
   filter(VAF < 0.25,
          t_alt_count >= 3,
          t_depth >= 10) %>% 
@@ -82,14 +82,14 @@ pp1 <- maf %>% mutate(VAF = t_alt_count/t_depth,
   geom_point(aes(y = VAF))
 
 pp2 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                      ID = as.factor(...1 )) %>% 
+                      ID = as.factor(X)) %>%
   filter(VAF < 0.25,
          t_alt_count >= 3,
          t_depth >= 10) %>% 
   ggplot(aes(x = fct_reorder(.f =ID, t_alt_count))) +
   geom_point(aes(y=t_depth))
 pp3 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                      ID = as.factor(...1 )) %>% 
+                      ID = as.factor(X)) %>%
   filter(VAF < 0.25,
          t_alt_count >= 3,
          t_depth >= 10) %>% 
@@ -109,21 +109,21 @@ maf %>% filter(VAF < 0.05 | t_depth < 50 | t_alt_count <= 3) %>% count()
 
 # Check 
 p1 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                     ID = as.factor(...1 )) %>% 
+                     ID = as.factor(X)) %>%
   filter(VAF < 0.05,
          t_alt_count >= 8) %>% 
   ggplot(aes(x = fct_reorder(.f =ID, t_alt_count))) +
   geom_point(aes(y = VAF))
 
 p2 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                     ID = as.factor(...1 )) %>% 
+                     ID = as.factor(X)) %>%
   filter(VAF < 0.05,
          t_alt_count >= 8) %>% 
   ggplot(aes(x = fct_reorder(.f =ID, t_alt_count))) +
   geom_point(aes(y=t_depth))
 
 p3 <- maf %>% mutate(VAF = t_alt_count/t_depth,
-                     ID = as.factor(...1 )) %>% 
+                     ID = as.factor(X)) %>%
   filter(VAF < 0.05,
          t_alt_count >= 8) %>% 
   ggplot(aes(x = fct_reorder(.f =ID, t_alt_count))) +
@@ -225,24 +225,24 @@ maf_p %>% filter(VAF > 0.05 & n_depth > 10 & t_depth > 30, t_alt_count >= 5)  %>
 # These patients were still outlieres in terms of mutations after filtering
 
 four_patients<- c("TCGA-AO-A128","TCGA-BH-A18G","TCGA-D8-A1XK", "TCGA-D8-A1XQ")
-mini_maf <- maf_p %>% filter(Patient_ID %in% four_patients) %>% 
+mini_maf <- maf_p %>% filter(Patient_ID %in% four_patients) %>%
   filter(VAF > 0.05 & n_depth > 10 & t_depth > 30, t_alt_count >= 5) 
 
 mini_maf %>% ggplot(aes(x = VAF, color = Patient_ID), alpha = 0.8) +
   geom_density()
 
 p1 <- mini_maf %>% mutate(VAF = t_alt_count/t_depth,
-                          ID = as.factor(...1 )) %>% 
+                          ID = as.factor(X)) %>%
   ggplot(aes(x = fct_reorder(.f =ID, t_alt_count))) +
   geom_point(aes(y = VAF))
 
 p2 <- mini_maf %>% mutate(VAF = t_alt_count/t_depth,
-                          ID = as.factor(...1 )) %>% 
+                          ID = as.factor(X)) %>%
   ggplot(aes(x = fct_reorder(.f =ID, t_alt_count))) +
   geom_point(aes(y=t_depth))
 
 p3 <- mini_maf %>% mutate(VAF = t_alt_count/t_depth,
-                          ID = as.factor(...1 )) %>% 
+                          ID = as.factor(X)) %>%
   ggplot(aes(x = fct_reorder(.f =ID, t_alt_count))) +
   geom_point(aes(y=t_alt_count))
 
