@@ -120,5 +120,4 @@ ggsave(muts_per_patient_bar, filename =  "../results/031_barplot_mutations_per_p
   mymaf <- read.maf(maf = DEG_Mutations_Annotations)
   plotProtein(gene ='SYNE1', refSeqID = 'NM_182961')
   lollipopPlot(maf = mymaf, gene = 'SYNE1', AACol = 'HGVSp_Short', showMutationRate = TRUE, refSeqID = "NM_182961")
-  lollipopPlot(maf = mymaf, gene = 'CD200', AACol = 'HGVSp_Short', showMutationRate = TRUE)
 
