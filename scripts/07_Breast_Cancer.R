@@ -3,10 +3,12 @@
 # SET UP -------------------------------
 # Library ----------------
 library(tidyverse)
+library(Moonlight2R)
 
 # Data -------------------
 load("../results/Oncogenic_mediators_mutation_summary.rda")
 GUST <- read.csv("../data/rawdata/GUST_BRCA.csv")
+data(NCG)
 
 # Analysis -------------------------
 Drivers <- Oncogenic_mediators_mutation_summary %>% filter( CScape_Driver >= 1)
