@@ -88,7 +88,7 @@ data_stage %>%
 
 #Are age distribution equal in the stages?
 x <- data_stage %>% mutate_if(is.character, as_factor) %>% 
-  select(Patient_ID, age_at_index, Stage) %>% filter(Stage != 'Unknown')
+  select(age_at_index, Stage) %>% filter(Stage != 'Unknown')
 levels(x$Stage )
 ggplot(x, aes(x = Stage, y = age_at_index, color = Stage), alpha = 0.8)+
   geom_violin()+
