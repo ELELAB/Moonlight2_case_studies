@@ -72,6 +72,7 @@ generate the results. It includes:
   - List of transcription factors from TRRUST (`trrust_rawdata_human.tsv`)
   - List of human kinases from Kinhub (`kinhub.tsv`)
   - List of PAM50 genes (`pam50_list.txt`)
+  - List of dual role driver genes from Shen et al. 2018 (`Shen_dual_genes.txt`)
 
 ### `./scripts/`
 The script `00_init.R` downloads the raw data from our OSF respository, 
