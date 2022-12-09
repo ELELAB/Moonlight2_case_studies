@@ -29,7 +29,7 @@ Once you have access to `conda`, you can
 
 ```
 git clone https://github.com/ELELAB/Moonlight2_DMA_basal_like.git
-cd Moonlight2_DMA_basal_like.git
+cd Moonlight2_DMA_basal_like
 ```
 
 2. create a virtual environment using conda activate it:
