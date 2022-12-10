@@ -5,6 +5,7 @@ rm(list = ls())
 # Check packages ----------------------------------------------------------
 
 # Download data from OSF --------------------------------------------------
+library('osfr')
 node = osf_retrieve_node('eq9wj')
 files = osf_ls_files(node)
 osf_download(files, recurse=TRUE, conflicts="skip")
@@ -16,15 +17,16 @@ setwd("./scripts")
 library(renv)
 renv::settings$external.libraries(c('../env_Basal/lib/R/library/'))
 renv::restore()
+renv::activate()
+detach('package:renv', unload=TRUE)
 
 # load required packages
 library('BiocManager')
-library('osfr')
 library('maftools')
 library('enrichR')
 library('UpSetR')
 library('liftOver')
-library('ELELAB/Moonlight2R')
+library('Moonlight2R')
 library('ggplot2')
 library('tidyverse')
 

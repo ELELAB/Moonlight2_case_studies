@@ -45,6 +45,14 @@ conda activate ./env_Basal
 $ bash ./Run_Basal.sh
 ```
 
+**WARNING**: our script use the [renv](https://rstudio.github.io/renv/articles/renv.html)
+R package to handle automatic dependency installation. `Renv` writes packages in
+its own cache folder, which is by default in the user's home directory. This might
+not be desireable if free space in the home directory is limited as this cache
+takes about 2GB for this project. You can change the location of the Renv root
+folder by setting a system environment variable - please see comments in the 
+`Run_Basal.sh` script.
+
 This script will:
 
 1. Install in the environment all the necessary R packages, including Moonlight2R
