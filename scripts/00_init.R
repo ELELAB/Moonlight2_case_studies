@@ -1,21 +1,8 @@
-library(pacman)
-
 # Clear workspace ---------------------------------------------------------
 rm(list = ls())
 
-# Check all req are install 
+# Check all req are installed 
 # Check packages ----------------------------------------------------------
-# Checking for the required packages download if not present
-
-p_load('BiocManager')
-p_load('osfr')
-p_load('maftools')
-p_load('enrichR')
-p_load('UpSetR')
-p_load('liftOver')
-p_load_gh('ELELAB/Moonlight2R')
-p_load('ggplot2')
-p_load('tidyverse')
 
 # Download data from OSF --------------------------------------------------
 node = osf_retrieve_node('eq9wj')
@@ -24,6 +11,22 @@ osf_download(files, recurse=TRUE, conflicts="skip")
 
 # Set working directory ---------------------------------------------------
 setwd("./scripts")
+
+# restore packages from lockfile
+library(renv)
+renv::settings$external.libraries(c('../env_Basal/lib/R/library/'))
+renv::restore()
+
+# load required packages
+library('BiocManager')
+library('osfr')
+library('maftools')
+library('enrichR')
+library('UpSetR')
+library('liftOver')
+library('ELELAB/Moonlight2R')
+library('ggplot2')
+library('tidyverse')
 
 #Run scripts
 
