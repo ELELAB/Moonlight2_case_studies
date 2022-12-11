@@ -6,6 +6,9 @@ library(TCGAbiolinks)
 library(Moonlight2R) 
 library(tidyverse)
 
+options(bitmapType='cairo')
+
+
 # Data -------------------
 DEA_Basal <- get(load("../data/rawdata/BRCA_BRCA.Basal_dataDEGs.rda"))
 Filt_Basal_raw <- get(load("../data/rawdata/BRCA_BRCA.Basal_dataFilt_HUGO.rda"))
@@ -55,6 +58,6 @@ DMA_Basal <- DMA(dataMAF = Maf_Basal_filtered,
                  dataDEGs = DEA_Basal,
                  dataPRA = PRA_Basal,
                  results_folder = "../results",
-                 coding_file = "/data/databases/CScape/CScape-20210624/css_coding.vcf.gz",
-                 noncoding_file = "/data/databases/CScape/CScape-20210624/css_noncoding.vcf.gz")
+                 coding_file = Sys.getenv('CSCAPE_CODING'),
+                 noncoding_file = Sys.getenv('CSCAPE_NONCODING'))
 save(DMA_Basal, file = "../data/DMA_Basal.rda")
