@@ -17,6 +17,18 @@ AIM: To find driver genes for Basal-like patients by running Moonlight on BRCA-B
 
 All the analyses have been performed on a GNU/Linux server.
 
+### CScape-somatic
+
+In order to run the analyses you will need to have available the pre-calculated
+[CScape-somatic](http://cscape-somatic.biocompute.org.uk) scores. These are
+downloadable from CScape-somatic website. Please download at least the
+`css_coding.vcf.gz` and `css_noncoding_.vcf.gz` files and store them in a local
+directory of your choice. Then modify the `Run_Basal.sh` script so that the
+system variables referred therein refer to the location of these two files
+(see the file itself for an example).
+
+### Computing environment### Computing environment### Computing environment
+
 In order to reproduce the paper data, you will need to set up a conda environment
 on which the expected version of R and the required packages will be installed;
 this requires being able to run Anaconda by means of the `conda` executable.
@@ -39,7 +51,7 @@ conda create --prefix ./env_Basal -c conda-forge r-base=4.2 r-pacman r-curl r-ra
 conda activate ./env_Basal
 ```
 
-3. run the analyis:
+3. run the analysis:
 
 ```
 $ bash ./Run_Basal.sh
