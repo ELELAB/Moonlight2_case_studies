@@ -30,6 +30,9 @@ library('Moonlight2R')
 library('ggplot2')
 library('tidyverse')
 
+# set up for Cairo rendering, for headless machines
+options(bitmapType='cairo')
+
 #Run scripts
 
 ## Moonlight
