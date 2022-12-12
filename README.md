@@ -22,12 +22,12 @@ All the analyses have been performed on a GNU/Linux server.
 In order to run the analyses you will need to have available the pre-calculated
 [CScape-somatic](http://cscape-somatic.biocompute.org.uk) scores. These are
 downloadable from CScape-somatic website. Please download at least the
-`css_coding.vcf.gz` and `css_noncoding_.vcf.gz` files and store them in a local
+`css_coding.vcf.gz` and `css_noncoding.vcf.gz` files and store them in a local
 directory of your choice. Then modify the `Run_Basal.sh` script so that the
-system variables referred therein refer to the location of these two files
+system variables defined therein refer to the location of these two files
 (see the file itself for an example).
 
-### Computing environment### Computing environment### Computing environment
+### Computing environment
 
 In order to reproduce the paper data, you will need to set up a conda environment
 on which the expected version of R and the required packages will be installed;
