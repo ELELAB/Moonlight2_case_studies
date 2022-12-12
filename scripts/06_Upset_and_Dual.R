@@ -89,26 +89,24 @@ onc <- Moonlight_OCG[Moonlight_OCG %in% NCG_OCG]
 onco_x <- enrichr(genes = onc, databases = dbs)
 tum_x <- enrichr(genes=tum, databases = dbs)
 
+
 #Molecular function
 p1 <- goplot(data = x$GO_Molecular_Function_2021, title = "Dual role", top = 10)
 p2 <- goplot(data = onco_x$GO_Molecular_Function_2021, title = "Oncogenes" , top =10)
 p3 <- goplot(data = tum_x$GO_Molecular_Function_2021, title = "Tumor suppressors", top =10)
-grid.arrange(p1, p2, p3,ncol=3, top = textGrob("Molecular Function",gp=gpar(fontsize=20,font=3)))
+grid.arrange(p1, p2, p3, ncol=3) #, top = textGrob("Molecular Function", gp=gpar(fontsize=20,font=3)))
 
 #Biological Process
 p1 <- goplot(data = x$GO_Biological_Process_2021, title = "Dual role", top = 10)
 p2 <- goplot(data = onco_x$GO_Biological_Process_2021, title = "Oncogenes" , top =10)
 p3 <- goplot(data = tum_x$GO_Biological_Process_2021, title = "Tumor suppressors", top =10)
-grid.arrange(p1, p2, p3,ncol=3, top = textGrob("Biological Process",gp=gpar(fontsize=20,font=3)))
+grid.arrange(p1, p2, p3,ncol=3) #, top = textGrob("Biological Process",gp=gpar(fontsize=20,font=3)))
 
 #KEGG
 p1 <- goplot(data = x$KEGG_2021_Human, title = "Dual role", top = 10)
 p2 <- goplot(data = onco_x$KEGG_2021_Human, title = "Oncogenes" , top =10)
 p3 <- goplot(data = tum_x$KEGG_2021_Human, title = "Tumor suppressors", top =10)
 grid.arrange(p1, p2, p3,ncol=3) #, top = textGrob("KEGG Pathways",gp=gpar(fontsize=20,font=3)))
-
-
-
 
 ## Compare Dual drivers with Shen et al. 2018 -----------------
 Shen <- read.delim(file = "../data/rawdata/Shen_dual_genes.txt",
