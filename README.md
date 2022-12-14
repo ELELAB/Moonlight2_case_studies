@@ -44,7 +44,8 @@ git clone https://github.com/ELELAB/Moonlight2_DMA_basal_like.git
 cd Moonlight2_DMA_basal_like
 ```
 
-2. create a virtual environment using conda activate it:
+2. create a virtual environment using conda activate it. 
+The environment should be placed in the Moonlight2_DMA_basal_like folder:
 
 ```
 conda create --prefix ./env_Basal -c conda-forge r-base=4.2 r-pacman r-curl r-ragg r-renv r-osfr r-cairo
