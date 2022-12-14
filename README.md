@@ -21,11 +21,13 @@ All the analyses have been performed on a GNU/Linux server.
 
 In order to run the analyses you will need to have available the pre-calculated
 [CScape-somatic](http://cscape-somatic.biocompute.org.uk) scores. These are
-downloadable from CScape-somatic website. Please download at least the
+downloadable from CScape-somatic website. Please download the
 `css_coding.vcf.gz` and `css_noncoding.vcf.gz` files and store them in a local
-directory of your choice. Then modify the `Run_Basal.sh` script so that the
-system variables defined therein refer to the location of these two files
-(see the file itself for an example).
+directory of your choice. The corresponding .tbi files (`css_coding.vcf.gz.tbi`
+and `css_noncoding.vcf.gz.tbi`) must also be downloaded and be placed in the
+same folder. Then modify the `Run_Basal.sh` script so that the
+system variables defined therein refer to the location of the two files:
+`css_coding.vcf.gz` and `css_noncoding.vcf.gz` (see the file itself for an example).
 
 ### Computing environment
 
