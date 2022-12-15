@@ -1,15 +1,37 @@
 # Clear workspace ---------------------------------------------------------
 rm(list = ls())
 
+# Check all req are installed 
+# Check packages ----------------------------------------------------------
+
+# Download data from OSF --------------------------------------------------
+library('osfr')
+node = osf_retrieve_node('eq9wj')
+files = osf_ls_files(node)
+osf_download(files, recurse=TRUE, conflicts="skip")
+
 # Set working directory ---------------------------------------------------
 setwd("./scripts")
 
-# Check all req are install 
-# Check packages ----------------------------------------------------------
-# Checking for the required packages download if not present
-install_if_needed(c("Moonlight2R",
-                    "devtools",
-                    "TCGAbiolinks"))
+# restore packages from lockfile
+library(renv)
+renv::settings$external.libraries(c('../env_Basal/lib/R/library/'))
+renv::restore()
+renv::activate()
+detach('package:renv', unload=TRUE)
+
+# load required packages
+library('BiocManager')
+library('maftools')
+library('enrichR')
+library('UpSetR')
+library('liftOver')
+library('Moonlight2R')
+library('ggplot2')
+library('tidyverse')
+
+# set up for Cairo rendering, for headless machines
+options(bitmapType='cairo')
 
 #Run scripts
 

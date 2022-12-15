@@ -3,10 +3,12 @@
 # SET UP -------------------------------
 # Library ----------------
 library(tidyverse)
+library(Moonlight2R)
 
 # Data -------------------
 load("../results/Oncogenic_mediators_mutation_summary.rda")
 GUST <- read.csv("../data/rawdata/GUST_BRCA.csv")
+data(NCG)
 
 # Analysis -------------------------
 Drivers <- Oncogenic_mediators_mutation_summary %>% filter( CScape_Driver >= 1)
@@ -31,7 +33,7 @@ moonlight_gust_tab <- left_join(Drivers, GUST, by = c("Hugo_Symbol" = "Symbol"))
   filter(!is.na(GUST_pred)) %>% 
   select(Hugo_Symbol, Moonlight_Oncogenic_Mediator, GUST_pred, NCG_driver, NCG_cancer_type) 
 
-save(moonlight_gust_tab, file = "../results/07_overlapping_genes_moonlight_ncg_gust.csv")
+write.csv(moonlight_gust_tab, file = "../results/07_overlapping_genes_moonlight_ncg_gust.csv")
 
 ## CScape-somatic threshold score -----------------------------
 # Should we adjust driver threshold based on NGC and CScape-scores, as 

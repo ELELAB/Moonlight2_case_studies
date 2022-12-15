@@ -17,6 +17,6 @@ dev.off()
 
 # URA plot -------------
 png(filename = "../results/plotURA.png")
-plotURA(dataURA = URA_Basal[c(names(PRA_Balsa$TSG), names(PRA_Basal$OCG)),, drop = FALSE], 
+plotURA(dataURA = URA_Basal[c(names(PRA_Basal$TSG), names(PRA_Basal$OCG)),, drop = FALSE],
         additionalFilename = "_apoptosis_proliferation")
 dev.off()
