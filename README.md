@@ -130,13 +130,13 @@ The paper contents corresponds to the following files:
 | Figure 2       | `results/021_heatmap_complete.pdf`                    |
 | Figure 3       | `results/022_Mediators_moonlight_heatmap.pdf`         |
 | Figure 4       | `results/032_promoter_moonlight_heatmap.pdf`          |
-| Figure 5       | `results/05_GO_KEGG_top_adjpval_OCG_TSG.png`          |
+| Figure 5       | `results/05_GO_KEGG_top_adjpval_OCG_TSG.pdf`          |
 | Figure 6       | `results/06_upsetplot_drivers.pdf`                    |
 | Table 1        | The CScape scores are derived from Rogers et al. 2020 |
 | Table 2        | text output of `scripts/030_summarise.R`              |
 | Table 3        | `results/032_promoter_mutation_genes.csv`             |
 | Table 4        | `results/033_driver_TF.csv`                           |
-| Table S2       | In OSF repository: `data/DMA_Basal.rda.gz`            |
+| Table S2       | In OSF repository: `data/DMA_Basal.rda`               |
 | Table S3       | `results/06_overlap_moonlight_drivers_vs_ncg.csv`     |
 | Table S4       | `results/07_overlapping_genes_moonlight_ncg_gust.csv` |
 | Sup. Figure S1 | `results/05_variant_class_percent_driver_TSG_OCG.png` |
