@@ -47,7 +47,7 @@ git clone https://github.com/ELELAB/Moonlight2_DMA_basal_like.git
 cd Moonlight2_DMA_basal_like
 ```
 
-2. copy or link the CSScape-somatic files in the main repository directory
+2. copy or link the CScape-somatic files in the main repository directory
 (the following example creates symbolic links - you will need to customize your
 paths depending on the location of your folder):
 
