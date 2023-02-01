@@ -17,6 +17,9 @@ AIM: To find driver genes for Basal-like patients by running Moonlight on BRCA-B
 
 All the analyses have been performed on a GNU/Linux server.
 
+NB: When reproducing the analyses and results, the user cannot expect to obtain identical results to the ones
+in this GitHub repository and associated with the publication due to stochastic processes in Moonlight. 
+
 ### CScape-somatic
 
 In order to run the analyses you will need to have available the pre-calculated
