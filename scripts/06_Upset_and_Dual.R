@@ -60,8 +60,7 @@ upset_plot(file_name = "06_upsetplot_drivers.pdf", dir_output = "../results/",
 ## NCG vs Moonlight driver -------------------------------------------------
 overlap_tab <- Drivers %>% filter(NCG_driver != 'Candidate') %>% 
   select(Moonlight_Oncogenic_Mediator, NCG_driver, Hugo_Symbol) %>% 
-  group_by(Moonlight_Oncogenic_Mediator, NCG_driver) %>% 
-  summarise(Genes = list(Hugo_Symbol)) 
+  group_by(Moonlight_Oncogenic_Mediator, NCG_driver) 
 write_csv(overlap_tab, file = "../results/06_overlap_moonlight_drivers_vs_ncg.csv")
 
 ## Driver Enrichment Analysis ----------------------------------------------
