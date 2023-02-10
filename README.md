@@ -11,14 +11,14 @@ contacts for the repository: Elena Papaleo, elpap-at-dtu.dk, elenap-at-cancer.dk
 PLEASE, CITE THE PUBLICATION ABOVE IF YOU USE THE SCRIPTS FOR YOUR OWN RESEARCH
 
 This Project-folder contains the entire Basal-like Breast Cancer study
-AIM: To find driver genes for Basal-like patients by running Moonlight on BRCA-Basal specific data from TCGA.
+AIM: To find driver genes for Basal-like patients by running Moonlight2 on BRCA-Basal specific data from TCGA.
 
 ## Installing requirements and reproducing the analysis
 
 All the analyses have been performed on a GNU/Linux server.
 
 NB: When reproducing the analyses and results, the user cannot expect to obtain identical results to the ones
-in this GitHub repository and associated with the publication due to stochastic processes in Moonlight. 
+in this GitHub repository and associated with the publication due to stochastic processes in the GRN step of the Moonlight protocol. 
 
 ### CScape-somatic
 
