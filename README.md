@@ -11,10 +11,10 @@ contacts for the repository: Elena Papaleo, elpap-at-dtu.dk, elenap-at-cancer.dk
 
 PLEASE, CITE THE PUBLICATION ABOVE IF YOU USE THE SCRIPTS FOR YOUR OWN RESEARCH
 
-This repository contain case studies associated with the new release of the MoonlightR package, namely Moonlight2R,
+This repository contains case studies associated with the new release of the MoonlightR package, namely Moonlight2R,
 which implements new features associated with mutational analysis in a cancer cohort to find driver genes. The case
 studies are conducted on Basal-like breast cancer, lung cancer, and thyroid cancer using data from The Cancer Genome
-Atlas (TCGA). The scripts and results associated with these case studies are contained in this repository.
+Atlas (TCGA). The scripts and results associated with these case studies are stored in this repository.
 
 AIM: To find driver genes for Basal-like, lung, and thyroid cancer patients by running Moonlight2 on data from TCGA.
 
@@ -53,4 +53,6 @@ conda env create --prefix ./env_Moonlight --file conda_env.yaml
 conda activate ./env_Moonlight
 ```
 
+3. follow instructions in README of specific cancer type to reproduce analyses
+associated with that cancer type
 
