@@ -53,6 +53,14 @@ conda env create --prefix ./env_Moonlight --file conda_env.yaml
 conda activate ./env_Moonlight
 ```
 
-3. follow instructions in README of specific cancer type to reproduce analyses
+3. change directory to cancer type of interest, i.e. one of below possibilites:
+
+```
+cd breast_basal
+cd lung
+cd thyroid
+```
+
+4. follow instructions in README of specific cancer type to reproduce analyses
 associated with that cancer type
 
