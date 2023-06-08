@@ -1,10 +1,11 @@
 
 Cancer Systems Biology, Section of Bioinformatics, Department of Health and Technology, Technical University of Denmark, 2800, Lyngby, Copenhagen
 
-# Moonlight2_DMA_basal_like
+# Moonlight2_case_studies
 
 An Automatized Workflow to Study Mechanistic Indicators for Driver Gene Prediction with Moonlight
-Astrid Saksager, Mona Nourbakhsh, Nikola Tom, Xi Steven Chen, Antonio Colaprico, Catharina Olsen, Matteo Tiberti, Elena Papaleo*, submitted to biorxiv
+Astrid Saksager, Mona Nourbakhsh, Nikola Tom, Xi Steven Chen, Antonio Colaprico, Catharina Olsen, Matteo Tiberti, Elena Papaleo*, 
+bioRxiv 2022.11.18.517066; doi: https://doi.org/10.1101/2022.11.18.517066
 
 contacts for the repository: Elena Papaleo, elpap-at-dtu.dk, elenap-at-cancer.dk; Astrid Saksager: abrisa-at-dtu.dk
 
@@ -26,31 +27,19 @@ In order to run the analyses you will need to have available the pre-calculated
 [CScape-somatic](http://cscape-somatic.biocompute.org.uk) scores. These are
 downloadable from CScape-somatic website. Please download the `css_coding.vcf.gz`,
 `css_noncoding.vcf.gz`, `css_coding.vcf.gz.tbi` and `css_noncoding.vcf.gz.tbi`
-files and store them or link them in the main folder of the cloned repository
-(see step 2 in the following section).
+files and store them or link them in the folder of the cancer type
+(see step 1 in the following section).
 
 The `Run_Basal.sh` script can be optionally modified to set a custom location of
 the CScape file. **If this is a relative path, it should start from the `scripts`
 directory inside the main folder, since that is where the code is run from.**
 
-### Computing environment
+### Reproducing the analyses
 
-In order to reproduce the paper data, you will need to set up a conda environment
-on which the expected version of R and the required packages will be installed;
-this requires being able to run Anaconda by means of the `conda` executable.
+To prepare the virtual environment for this case study, please see the README
+file in the main folder. Then proceed to the following steps:
 
-If you don't have access to `conda` please see the [Miniconda installer page](https://docs.conda.io/en/latest/miniconda.html) for instructions on how to install Miniconda.
-
-Once you have access to `conda`, you can
-
-1. clone our github repository into a local directory on your local machine:
-
-```
-git clone https://github.com/ELELAB/Moonlight2_DMA_basal_like.git
-cd Moonlight2_DMA_basal_like
-```
-
-2. copy or link the CScape-somatic files in the main repository directory
+1. copy or link the CScape-somatic files in the directory of the cancer type
 (the following example creates symbolic links - you will need to customize your
 paths depending on the location of your folder):
 
@@ -61,15 +50,7 @@ ln -s ../../../../databases/CScape/CScape-20210624/css_noncoding.vcf.gz .
 ln -s ../../../../databases/CScape/CScape-20210624/css_noncoding.vcf.gz.tbi .
 ```
 
-3. create a virtual environment using conda activate it. 
-The environment directory should be placed in the Moonlight2_DMA_basal_like folder:
-
-```
-conda env create --prefix ./env_Basal --file conda_env.yaml 
-conda activate ./env_Basal
-```
-
-3. run the analysis:
+2. run the analysis:
 
 ```
 $ bash ./Run_Basal.sh
