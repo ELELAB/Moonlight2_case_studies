@@ -15,13 +15,12 @@ setwd("./scripts")
 
 # restore packages from lockfile
 library(renv)
-renv::settings$external.libraries(c('../env_Basal/lib/R/library/'))
+renv::settings$external.libraries(c('../../env_Moonlight/lib/R/library/'))
 renv::restore()
 renv::activate()
 detach('package:renv', unload=TRUE)
 
 # load required packages
-library('BiocManager')
 library('maftools')
 library('enrichR')
 library('UpSetR')

@@ -1,17 +1,25 @@
 
 Cancer Systems Biology, Section of Bioinformatics, Department of Health and Technology, Technical University of Denmark, 2800, Lyngby, Copenhagen
 
-# Moonlight2_DMA_basal_like
+# Moonlight2_case_studies
 
 An Automatized Workflow to Study Mechanistic Indicators for Driver Gene Prediction with Moonlight
-Astrid Saksager, Mona Nourbakhsh, Nikola Tom, Xi Steven Chen, Antonio Colaprico, Catharina Olsen, Matteo Tiberti, Elena Papaleo*, submitted to biorxiv
+Astrid Saksager, Mona Nourbakhsh, Nikola Tom, Xi Steven Chen, Antonio Colaprico, Catharina Olsen, Matteo Tiberti, Elena Papaleo*, 
+bioRxiv 2022.11.18.517066; doi: https://doi.org/10.1101/2022.11.18.517066
 
 contacts for the repository: Elena Papaleo, elpap-at-dtu.dk, elenap-at-cancer.dk; Astrid Saksager: abrisa-at-dtu.dk
 
 PLEASE, CITE THE PUBLICATION ABOVE IF YOU USE THE SCRIPTS FOR YOUR OWN RESEARCH
 
-This Project-folder contains the entire Basal-like Breast Cancer study
-AIM: To find driver genes for Basal-like patients by running Moonlight2 on BRCA-Basal specific data from TCGA.
+This repository contains case studies associated with the new release of the MoonlightR package, namely Moonlight2R,
+which implements new features associated with mutational analysis in a cancer cohort to find driver genes. The case
+studies are conducted on Basal-like breast cancer, lung cancer, and thyroid cancer using data from The Cancer Genome
+Atlas (TCGA). The scripts and results associated with these case studies are stored in this repository.
+
+AIM: To find driver genes for Basal-like, lung, and thyroid cancer patients by running Moonlight2 on data from TCGA.
+
+Below are instructions on the first steps to reproducing the analyses. Afterwards, please see README files in each 
+cancer folder for specifics on how to reproduce analyses for the given cancer type.
 
 ## Installing requirements and reproducing the analysis
 
@@ -19,19 +27,6 @@ All the analyses have been performed on a GNU/Linux server.
 
 NB: When reproducing the analyses and results, the user cannot expect to obtain identical results to the ones
 in this GitHub repository and associated with the publication due to stochastic processes in the GRN step of the Moonlight protocol. 
-
-### CScape-somatic
-
-In order to run the analyses you will need to have available the pre-calculated
-[CScape-somatic](http://cscape-somatic.biocompute.org.uk) scores. These are
-downloadable from CScape-somatic website. Please download the `css_coding.vcf.gz`,
-`css_noncoding.vcf.gz`, `css_coding.vcf.gz.tbi` and `css_noncoding.vcf.gz.tbi`
-files and store them or link them in the main folder of the cloned repository
-(see step 2 in the following section).
-
-The `Run_Basal.sh` script can be optionally modified to set a custom location of
-the CScape file. **If this is a relative path, it should start from the `scripts`
-directory inside the main folder, since that is where the code is run from.**
 
 ### Computing environment
 
@@ -46,101 +41,26 @@ Once you have access to `conda`, you can
 1. clone our github repository into a local directory on your local machine:
 
 ```
-git clone https://github.com/ELELAB/Moonlight2_DMA_basal_like.git
-cd Moonlight2_DMA_basal_like
+git clone https://github.com/ELELAB/Moonlight2_case_studies.git
+cd Moonlight2_case_studies
 ```
 
-2. copy or link the CScape-somatic files in the main repository directory
-(the following example creates symbolic links - you will need to customize your
-paths depending on the location of your folder):
+2. create a virtual environment using conda and activate it. 
+The environment directory should be placed in the Moonlight2_case_studies folder:
 
 ```
-ln -s ../../../../databases/CScape/CScape-20210624/css_coding.vcf.gz .
-ln -s ../../../../databases/CScape/CScape-20210624/css_coding.vcf.gz.tbi .
-ln -s ../../../../databases/CScape/CScape-20210624/css_noncoding.vcf.gz .
-ln -s ../../../../databases/CScape/CScape-20210624/css_noncoding.vcf.gz.tbi .
+conda env create --prefix ./env_Moonlight --file conda_env.yaml 
+conda activate ./env_Moonlight
 ```
 
-3. create a virtual environment using conda activate it. 
-The environment directory should be placed in the Moonlight2_DMA_basal_like folder:
+3. change directory to cancer type of interest, i.e. one of below possibilites:
 
 ```
-conda env create --prefix ./env_Basal --file conda_env.yaml 
-conda activate ./env_Basal
+cd breast_basal
+cd lung
+cd thyroid
 ```
 
-3. run the analysis:
+4. follow instructions in README of specific cancer type to reproduce analyses
+associated with that cancer type
 
-```
-$ bash ./Run_Basal.sh
-```
-
-**WARNING**: our script use the [renv](https://rstudio.github.io/renv/articles/renv.html)
-R package to handle automatic dependency installation. `Renv` writes packages in
-its own cache folder, which is by default in the user's home directory. This might
-not be desireable if free space in the home directory is limited as this cache
-takes about 2GB for this project. You can change the location of the Renv root
-folder by setting a system environment variable - please see comments in the 
-`Run_Basal.sh` script.
-
-This script will:
-
-1. Install in the environment all the necessary R packages, including Moonlight2R
-from [our GitHub repository](https://www.github.com/ELELAB/Moonlight2R)
-2. Download from [our OSF repository](https://osf.io/eq9wj/) the `data` folder
-that contains data required for the analysis (see below). This takes approximately
-700MB of disk space.
-3. perform the analysis
-
-## Content of the downloaded directories
-
-### `./data`
-
-This contains the data generated by Moonlight2:
-`Basal_FEA.rda`, `Basal_URA.rda`, `Basal_GRN.rda`, `Basal_PRA.rda`, `Basal_DMA.rda`
-
-### `./data/rawdata`
-
-This data that is not generated in this project, but was used as input to
-generate the results. It includes:
-  - Mutation from TCGA-BRCA (`mutations.csv`)
-  - Differential Gene expression from TCGA-BRCA (`BRCA_BRCA.Basal_dataDEGs.rda`)
-  - Normal counts of gene expression (`BRCA_BRCA.Basal_dataFilt_HUGO.rda`)
-  - Driver genes predicted by GUST (`GUST_BRCA.csv`)
-  - List of transcription factors from TRRUST (`trrust_rawdata_human.tsv`)
-  - List of human kinases from Kinhub (`kinhub.tsv`)
-  - List of PAM50 genes (`pam50_list.txt`)
-  - List of dual role driver genes from Shen et al. 2018 (`Shen_dual_genes.txt`)
-
-### `./scripts/`
-The script `00_init.R` downloads the raw data from our OSF respository, 
-loads and installs the software packages required to run the rest of the scripts,
-and performs all the necessary calculations by sourcing a number of other
-scripts.
-
-The script are numbered and the results from each are numbered accordingly.
-
-### `./results/`
-This folder contains plots and tables used in the paper. The numbers in filenames
-refer to the script they are generated from.
-
-## Paper contents
-
-The paper contents corresponds to the following files:
-
-| Figure/Table   | Filename                                              |
-| -------------- | ----------------------------------------------------- |
-| Figure 2       | `results/021_heatmap_complete.pdf`                    |
-| Figure 3       | `results/022_Mediators_moonlight_heatmap.pdf`         |
-| Figure 4       | `results/032_promoter_moonlight_heatmap.pdf`          |
-| Figure 5       | `results/05_GO_KEGG_top_adjpval_OCG_TSG.pdf`          |
-| Figure 6       | `results/06_upsetplot_drivers.pdf`                    |
-| Table 1        | The CScape scores are derived from Rogers et al. 2020 |
-| Table 2        | text output of `scripts/030_summarise.R`              |
-| Table 3        | `results/032_promoter_mutation_genes.csv`             |
-| Table 4        | `results/033_driver_TF.csv`                           |
-| Table S2       | In OSF repository: `data/DMA_Basal.rda`               |
-| Table S3       | `results/06_overlap_moonlight_drivers_vs_ncg.csv`     |
-| Table S4       | `results/07_overlapping_genes_moonlight_ncg_gust.csv` |
-| Sup. Figure S1 | `results/05_variant_class_percent_driver_TSG_OCG.png` |
-| Sup. Figure S2 | `results/98_mutations_per_patient.png`                |
