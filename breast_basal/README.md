@@ -121,7 +121,9 @@ The paper contents corresponds to the following files:
 | Table 3        | `results/032_promoter_mutation_genes.csv`             |
 | Table 4        | `results/033_driver_TF.csv`                           |
 | Table S2       | In OSF repository: `data/DMA_Basal.rda`               |
-| Table S3       | `results/06_overlap_moonlight_drivers_vs_ncg.csv`     |
-| Table S4       | `results/07_overlapping_genes_moonlight_ncg_gust.csv` |
+| Table S3       | `results/030_driver_genes_muts_annotations.csv`       |
+| Table S4       | `results/06_overlap_moonlight_drivers_vs_ncg.csv`     |
+| Table S5       | `results/07_overlapping_genes_moonlight_ncg_gust.csv` |
+| Table S6       | `results/08_driver_literature.csv`                    |
 | Sup. Figure S1 | `results/05_variant_class_percent_driver_TSG_OCG.png` |
 | Sup. Figure S2 | `results/98_mutations_per_patient.png`                |
