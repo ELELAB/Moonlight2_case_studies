@@ -28,6 +28,7 @@ library('liftOver')
 library('Moonlight2R')
 library('ggplot2')
 library('tidyverse')
+library('easyPubMed')
 
 # set up for Cairo rendering, for headless machines
 options(bitmapType='cairo')
@@ -56,6 +57,9 @@ source("05_OCG_vs_TSG.R")
 ## Comparing driver genes to other findings
 source("06_Upset_and_Dual.R")
 source("07_Breast_Cancer.R")
+
+## Literature search of driver genes
+source("08_Literature_Search.R")
 
 ## Supplementary text 2:
 source("98_MAF_quality_analysis.R")
