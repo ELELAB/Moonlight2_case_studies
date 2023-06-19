@@ -111,4 +111,9 @@ The paper contents corresponds to the following files:
 
 | Figure/Table   | Filename                                              |
 | -------------- | ----------------------------------------------------- |
-|                |                                                       |
+| Figure 7B      | results/021_heatmap_complete.pdf                      |
+| Table S2       | In OSF repository: data/DMA_Thyroid.rda               |
+| Table S3       | results/030_driver_genes_muts_annotations.csv         |
+| Table S4       | results/06_overlap_moonlight_drivers_vs_ncg.csv       |
+| Table S5       | results/07_overlapping_genes_moonlight_ncg_gust.csv   |
+| Table S6       | results/08_driver_literature.csv                      |
