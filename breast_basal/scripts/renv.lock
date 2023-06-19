@@ -195,6 +195,14 @@
         "crayon"
       ]
     },
+    "Cairo": {
+      "Package": "Cairo",
+      "Version": "1.6-0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "60aada7beac23aa3e9b219485d6b2da8",
+      "Requirements": []
+    },
     "ComplexHeatmap": {
       "Package": "ComplexHeatmap",
       "Version": "2.14.0",
@@ -1513,6 +1521,14 @@
         "vctrs"
       ]
     },
+    "easyPubMed": {
+      "Package": "easyPubMed",
+      "Version": "2.13",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "de016e6d81383949a0571e890ebd864f",
+      "Requirements": []
+    },
     "ellipsis": {
       "Package": "ellipsis",
       "Version": "0.3.2",
@@ -1540,12 +1556,13 @@
       "Package": "enrichplot",
       "Version": "1.18.3",
       "Source": "Bioconductor",
+      "RemoteType": "bioconductor",
       "Remotes": "YuLab-SMU/tidydr",
       "git_url": "https://git.bioconductor.org/packages/enrichplot",
       "git_branch": "RELEASE_3_16",
       "git_last_commit": "347f6bd",
       "git_last_commit_date": "2022-12-05",
-      "Hash": "1bfb69b41c67528934edb5f1d0339b48",
+      "Hash": "6c810be44c9858128186bafb3e82cf1b",
       "Requirements": [
         "DOSE",
         "GOSemSim",
@@ -1950,12 +1967,13 @@
       "Package": "ggtree",
       "Version": "3.6.2",
       "Source": "Bioconductor",
+      "RemoteType": "bioconductor",
       "Remotes": "GuangchuangYu/treeio",
       "git_url": "https://git.bioconductor.org/packages/ggtree",
       "git_branch": "RELEASE_3_16",
       "git_last_commit": "431ec37",
       "git_last_commit_date": "2022-11-09",
-      "Hash": "87f158a81a3fe875f084692ce5544be6",
+      "Hash": "523b8188806c4a139c2703a7bba9c501",
       "Requirements": [
         "ape",
         "aplot",
