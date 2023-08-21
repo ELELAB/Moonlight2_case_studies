@@ -3,11 +3,11 @@ Cancer Systems Biology, Section of Bioinformatics, Department of Health and Tech
 
 # Moonlight2_case_studies
 
-An Automatized Workflow to Study Mechanistic Indicators for Driver Gene Prediction with Moonlight
-Astrid Saksager, Mona Nourbakhsh, Nikola Tom, Xi Steven Chen, Antonio Colaprico, Catharina Olsen, Matteo Tiberti, Elena Papaleo*, 
-bioRxiv 2022.11.18.517066; doi: https://doi.org/10.1101/2022.11.18.517066
+A workflow to study mechanistic indicators for driver gene prediction with Moonlight
+Mona Nourbakhsh, Astrid Saksager, Nikola Tom, Xi Steven Chen, Antonio Colaprico, Catharina Olsen, Matteo Tiberti, Elena Papaleo*, 
+Briefings in Bioinformatics, 2023, bbad274, doi: https://doi.org/10.1093/bib/bbad274
 
-contacts for the repository: Elena Papaleo, elpap-at-dtu.dk, elenap-at-cancer.dk; Astrid Saksager: abrisa-at-dtu.dk
+contacts for the repository: Elena Papaleo, elpap-at-dtu.dk, elenap-at-cancer.dk; Astrid Saksager: abrisa-at-dtu.dk; Mona Nourbakhsh: mnou-at-dtu.dk
 
 PLEASE, CITE THE PUBLICATION ABOVE IF YOU USE THE SCRIPTS FOR YOUR OWN RESEARCH
 
